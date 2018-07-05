@@ -6,3 +6,14 @@ function getRandomNum(){
 function checkDuplicatedNum(lotto_nums, ball_num){
     return lotto_nums.includes(ball_num)
 }
+
+function getLottoNums(){
+    lotto_nums = []
+    while(lotto_nums.length != 6){
+        ball_num = getRandomNum()
+        if(!checkDuplicatedNum(lotto_nums, ball_num)){
+            lotto_nums.push(ball_num)
+        }
+    }
+    return lotto_nums
+}
