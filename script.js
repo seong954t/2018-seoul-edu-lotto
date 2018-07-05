@@ -2,3 +2,7 @@
 function getRandomNum(){
     return parseInt(Math.random()*45+1)
 }
+
+function checkDuplicatedNum(lotto_nums, ball_num){
+    return lotto_nums.includes(ball_num)
+}
