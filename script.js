@@ -25,3 +25,35 @@ function getWinningNumbersAndBonusNumber(){
     winning_numbers = getLottoNums()
     while(checkDuplicatedNum(winning_numbers, bonus_number = getRandomNum()));
 }
+
+function add(a, b){
+    return a+b
+}
+
+function getDuplicatedNum(lotto_nums){
+    check_winnings = []
+    for(ball_num of lotto_nums){
+        check_winnings.push(checkDuplicatedNum(winning_numbers, ball_num))
+    }
+    return check_winnings.reduce(add)
+}
+
+function getWinningResult(lotto_nums){
+    duplicated_num = getDuplicatedNum(lotto_nums)
+    switch(duplicated_num){
+        case 3:
+            return '5등'
+        case 4:
+            return '4등'
+        case 5:
+            if(checkDuplicatedNum(lotto_nums, bonus_number)){
+                return '2등'
+            }else{
+                return '3등'
+            }
+        case 6:
+            return '1등'
+        default:
+            return '꽝'
+    }
+}
