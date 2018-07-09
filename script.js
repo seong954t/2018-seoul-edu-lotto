@@ -8,6 +8,7 @@ function getRandomNum(){
 }
 
 // lotto_nums(list) 값들 중 ball_num(number)값과 중복되는 값이 있는지 확인한다.
+// 중복되는 값이 있으면 true 그렇지 않으면 false 반환
 function checkDuplicatedNum(lotto_nums, ball_num){
     return lotto_nums.includes(ball_num)
 }
@@ -25,7 +26,8 @@ function getLottoNums(){
     return lotto_nums
 }
 
-// 당첨번호를 위한 lotto 숫자 6개와, 그와 중복되지 않는 bonus_number를 얻는다.
+// getLottoNums 함수를 통해 winning_numbers에 당첨번호를 위한 숫자 6개를 얻는다.
+// checkDuplicatedNum 함수를 통해 winning_numbers와 중복되지 않는 bonus_number를 얻는다.
 function getWinningNumbersAndBonusNumber(){
     winning_numbers = getLottoNums()
     while(checkDuplicatedNum(winning_numbers, bonus_number = getRandomNum()));
