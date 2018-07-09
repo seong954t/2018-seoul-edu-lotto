@@ -1,9 +1,10 @@
 winning_numbers = []
 bonus_number = 0
+user_lotto_numbers_list = []
 
 // 1 ~ 45 사이의 랜덤한 숫자 반환
 function getRandomNum(){
-    return parseInt(Math.random()*45+1)
+    return parseInt(Math.random()*7+1)
 }
 
 function checkDuplicatedNum(lotto_nums, ball_num){
@@ -30,7 +31,7 @@ function add(a, b){
     return a+b
 }
 
-function getDuplicatedNum(lotto_nums){
+function getMachedNum(lotto_nums){
     check_winnings = []
     for(ball_num of lotto_nums){
         check_winnings.push(checkDuplicatedNum(winning_numbers, ball_num))
@@ -39,7 +40,7 @@ function getDuplicatedNum(lotto_nums){
 }
 
 function getWinningResult(lotto_nums){
-    duplicated_num = getDuplicatedNum(lotto_nums)
+    duplicated_num = getMachedNum(lotto_nums)
     switch(duplicated_num){
         case 3:
             return '5등'
@@ -56,4 +57,15 @@ function getWinningResult(lotto_nums){
         default:
             return '꽝'
     }
+}
+
+function addLottoNum(){
+    user_lotto_numbers_list.push(getLottoNums());
+}
+
+function checkWinLotto(){
+  getWinningNumbersAndBonusNumber();
+  for(user_lotto_numbers of user_lotto_numbers_list){
+    console.log(getWinningResult(user_lotto_numbers));
+  }
 }
