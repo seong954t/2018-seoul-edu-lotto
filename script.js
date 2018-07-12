@@ -23,6 +23,8 @@ function getLottoNums(){
             lotto_nums.push(ball_num)
         }
     }
+    // 이 부분은 수정하지 마세요.
+    drawCircle(lotto_nums)
     return lotto_nums
 }
 
