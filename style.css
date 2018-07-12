@@ -3,20 +3,86 @@ html, body {
     height: 100%;
     margin: 0;
 }
-.lotto-wrapper {
+.container{
+    margin: auto;
+    width: 600px;
+    border: 1px solid black;
+    border-radius: 20px;
+    height: fit-content;
     position: relative;
-    min-width: 500px;
     top: 50%;
-    min-height: 300px;
-    border: 1px solid red;
+    transform: translate(0,-50%);
+}
+section {
+    vertical-align: top;
     width: fit-content;
     height: fit-content;
+}
+.lotto-result {
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+}
+.lotto-result div{
+    display: inline-block;
+}
+.lotto-wrapper, .button-wrapper {
+    display: inline-block;
+    height: 600px;
+}
+.bonus-num {
+    margin-left: 10px;
+}
+.buttons {
+    margin: auto;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+section button{
+    color: white;
+    display: block;
+    font-size: 12px;
+    margin: auto;
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+}
+section button:focus {
+    outline: none;
+}
+section button:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 6px 1px grey;
+}
+#check-winner {
+    background-color: #F29661;
+}
+#buy-lotto {
+    background-color: #86E57F;
+}
+#check-winner {
+    margin-bottom: 50px;
+}
+section.lotto-wrapper, section.button-wrapper {
+    overflow-y: scroll;
+    min-height: 600px;
+    height: 600px;
     margin: auto;
     padding: 15px;
-    transform: translate(0,-50%);
-    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* Opera/IE 8+ */
+    box-sizing: border-box;
+}
+section.lotto-wrapper {
+    min-width: 400px;
+    border-right: 1px solid black;
+}
+section.button-wrapper {
+    width: calc(100% - 405px);
 }
 .ball-row {
     margin: 15px 0px;
@@ -46,4 +112,9 @@ html, body {
 }
 .num-41-45 {
     background-color: #84CBA1;
+}
+.result {
+    color: green;
+    font-size: 18px;
+    margin-left: 15px;
 }

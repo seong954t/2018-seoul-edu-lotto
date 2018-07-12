@@ -23,8 +23,6 @@ function getLottoNums(){
             lotto_nums.push(ball_num)
         }
     }
-    // 이 부분은 수정하지 마세요.
-    drawCircle(lotto_nums)
     return lotto_nums
 }
 
@@ -48,7 +46,7 @@ function getMachedNum(lotto_nums){
     return check_winnings.reduce(add)
 }
 
-// getMachedNum 함수를 통해 얻은 값을 통해 꽝, 5등, 4등, 3등, 2등, 1등을 반환한다.
+// getMachedNum 함수를 통해 얻은 값을 통해 '꽝', '5등', '4등', '3등', '2등', '1등'을 반환한다.
 // 꽝  -> 2개 이하 동일
 // 5등 -> 3개 동일
 // 4등 -> 4개 동일
@@ -77,11 +75,23 @@ function getWinningResult(lotto_nums){
 
 function addLottoNum(){
     user_lotto_numbers_list.push(getLottoNums());
+
+    // 이 부분은 수정하지 마세요.
+    document.getElementById("check-winner").disabled = false;
+    drawCircle(lotto_nums);
 }
 
 function checkWinLotto(){
   getWinningNumbersAndBonusNumber();
-  for(user_lotto_numbers of user_lotto_numbers_list){
-    console.log(getWinningResult(user_lotto_numbers));
+  let result = document.getElementsByClassName("result");
+  for(i in user_lotto_numbers_list) {
+      result[i].textContent = getWinningResult(user_lotto_numbers_list[i])
+      if(result[i].textContent == "꽝") {
+          result[i].style.color = "red";
+      }
   }
+  winning_numbers.push(bonus_number);
+  drawWinCircle(winning_numbers);
+  document.getElementById("buy-lotto").disabled = true;
+  document.getElementById("check-winner").disabled = true;
 }
