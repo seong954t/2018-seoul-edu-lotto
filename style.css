@@ -65,6 +65,10 @@ section button:hover {
 }
 #buy-lotto {
     background-color: #86E57F;
+    margin-bottom: 50px;
+}
+#reset-btn {
+    background-color: #F4C559;
 }
 #check-winner {
     margin-bottom: 50px;

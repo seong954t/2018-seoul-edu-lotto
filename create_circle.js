@@ -51,3 +51,14 @@ function setBallColor(span, num) {
         span.className = "num-circle num-41-45"
     }
 }
+
+function reset(){
+    document.getElementsByClassName("lotto-wrapper")[0].innerHTML = ''
+    document.getElementsByClassName("win-number")[0].innerHTML = ''
+    document.getElementsByClassName("bonus-number")[0].innerHTML = ''
+    document.getElementById("buy-lotto").disabled = false;
+    document.getElementById("check-winner").disabled = false;
+    winning_numbers = []
+    bonus_number = 0
+    user_lotto_numbers_list = []
+}
