@@ -3,6 +3,9 @@ html, body {
     height: 100%;
     margin: 0;
 }
+::-webkit-scrollbar { 
+    display: none; 
+}
 .container{
     margin: auto;
     width: 600px;
@@ -75,18 +78,17 @@ section button:hover {
 }
 section.lotto-wrapper, section.button-wrapper {
     overflow-y: scroll;
-    min-height: 600px;
     height: 600px;
     margin: auto;
     padding: 15px;
     box-sizing: border-box;
 }
 section.lotto-wrapper {
-    min-width: 400px;
+    width: 400px;
     border-right: 1px solid black;
 }
 section.button-wrapper {
-    width: calc(100% - 405px);
+    width: 194px
 }
 .ball-row {
     margin: 15px 0px;
