@@ -45,7 +45,7 @@ function add(a, b){
 
 // 당첨번호 winning_number와 자신의 lotto_nums 중 일치하는 번호의 개수를 반환한다.
 function getMachedNum(lotto_nums){
-    check_winnings = []
+    let check_winnings = []
     for(ball_num of lotto_nums){
         check_winnings.push(checkDuplicatedNum(winning_numbers, ball_num))
     }
@@ -60,7 +60,7 @@ function getMachedNum(lotto_nums){
 // 2등 -> 5개 동일, 보너스 동일
 // 1등 -> 6개 동일
 function getWinningResult(lotto_nums){
-    duplicated_num = getMachedNum(lotto_nums)
+    let duplicated_num = getMachedNum(lotto_nums)
     switch(duplicated_num){
         case 3:
             return '5등'
@@ -89,15 +89,19 @@ function addLottoNum(){
 
 function checkWinLotto(){
   getWinningNumbersAndBonusNumber();
-  let result = document.getElementsByClassName("result");
-  for(i in user_lotto_numbers_list) {
+
+  let result = $(".result")
+
+  for(let i in user_lotto_numbers_list) {
       result[i].textContent = getWinningResult(user_lotto_numbers_list[i])
       if(result[i].textContent == "꽝") {
           result[i].style.color = "red";
       }
   }
+
   winning_numbers.push(bonus_number);
   drawWinCircle(winning_numbers);
-  document.getElementById("buy-lotto").disabled = true;
-  document.getElementById("check-winner").disabled = true;
+
+  $("#buy-lotto").attr("disabled", true)
+  $("#check-winner").attr("disabled", true)
 }

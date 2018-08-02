@@ -53,11 +53,16 @@ function setBallColor(span, num) {
 }
 
 function reset(){
-    document.getElementsByClassName("lotto-wrapper")[0].innerHTML = ''
-    document.getElementsByClassName("win-number")[0].innerHTML = ''
-    document.getElementsByClassName("bonus-number")[0].innerHTML = ''
-    document.getElementById("buy-lotto").disabled = false;
-    document.getElementById("check-winner").disabled = false;
+    // document.getElementsByClassName("lotto-wrapper")[0].innerHTML = ''
+    $(".lotto-wrapper").text('')
+    // document.getElementsByClassName("win-number")[0].innerHTML = ''
+    $(".win-number").text('')
+    // document.getElementsByClassName("bonus-number")[0].innerHTML = ''
+    $(".bonus-number").text('')
+    // document.getElementById("buy-lotto").disabled = false;
+    $("#buy-lotto").attr("disabled", false)
+    // document.getElementById("check-winner").disabled = false;
+    $("#check-winner").attr("disabled", false)
     winning_numbers = []
     bonus_number = 0
     user_lotto_numbers_list = []
