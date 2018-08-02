@@ -56,7 +56,7 @@ describe("로또 함수의", function(){
         it("winning_numbers [21, 17, 33, 43, 15, 8], bonus 13, lotto_nums [8, 13, 15, 17, 21, 43]는 2등이다.", function(){
             winning_numbers = [21, 17, 33, 43, 15, 8]
             bonus_number = 13
-            expect(getWinningResult([8, 13, 15, 17, 21, 43])).toBe(2)
+            expect(getWinningResult([8, 13, 15, 17, 21, 43])).toBe('2등')
         })
     })
 })
