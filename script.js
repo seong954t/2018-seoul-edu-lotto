@@ -18,11 +18,12 @@ function checkDuplicatedNum(lotto_nums, ball_num){
 function getLottoNums(){
     let lotto_nums = []
     while(lotto_nums.length != 6){
-        ball_num = getRandomNum()
+        let ball_num = getRandomNum()
         if(!checkDuplicatedNum(lotto_nums, ball_num)){
             lotto_nums.push(ball_num)
         }
     }
+
     if(checkDuplicatedNumInList(lotto_nums)) throw Error("lotto_nums에 중복된 값 존재")
     return lotto_nums
 }
@@ -39,17 +40,13 @@ function getWinningNumbersAndBonusNumber(){
     while(checkDuplicatedNum(winning_numbers, bonus_number = getRandomNum()));
 }
 
-function add(a, b){
-    return a+b
-}
-
 // 당첨번호 winning_number와 자신의 lotto_nums 중 일치하는 번호의 개수를 반환한다.
 function getMachedNum(lotto_nums){
-    let check_winnings = []
+    let matched_num = 0
     for(ball_num of lotto_nums){
-        check_winnings.push(checkDuplicatedNum(winning_numbers, ball_num))
+        matched_num += checkDuplicatedNum(winning_numbers, ball_num)
     }
-    return check_winnings.reduce(add)
+    return matched_num
 }
 
 // getMachedNum 함수를 통해 얻은 값을 통해 '꽝', '5등', '4등', '3등', '2등', '1등'을 반환한다.
